@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import './AddQuestion.css';
 
 function AddQuestion() {
   const [editorState, setEditorState] = React.useState("");
@@ -38,20 +39,40 @@ function AddQuestion() {
   };
 
   return (
-    <div>
-      Ask a public question
-      <div>Title</div>
-      <input type="text" onChange={onTitleStateChange} />
-      <div>Body</div>
-      <Editor
-        value={editorState}
-        init={editorConfig}
-        onChange={onEditorStateChange}
-      />
-      <div>Tags</div>
-      <input type="text" onChange={onTagsStateChange} />
-      <div>
-        <button onClick={onAddQuestionClick}>Review Your Question</button>
+    <div className="add-question-page">
+      <div className="ask-question">Ask a public question</div>
+
+      <div className="question-container">
+
+      <div className="title-section">
+        <div class>Title</div>
+        <div class>Be specific and imagine you’re asking a question to another person</div>
+        <input type="text" onChange={onTitleStateChange} style={{width: "100%"}}/>
+      </div>
+
+      <div className="title-section" style={{marginTop: "25px"}}>
+        <div>Body</div>
+        <div>Include all the information someone would need to answer your question</div>
+      </div>
+
+      <div style={{marginTop: "25px"}}>
+        <Editor
+          value={editorState}
+          init={editorConfig}
+          onChange={onEditorStateChange}
+        />
+      </div>
+
+      <div className="title-section" style={{marginTop: "25px"}}>
+        <div>Tags</div>
+        <div>Add up to 5 tags to describe what your question is about</div>
+        <input type="text" onChange={onTagsStateChange} />
+        </div>
+      </div>
+
+
+      <div className="button-section">
+        <button className="add-button" onClick={onAddQuestionClick}>Review Your Question</button>
       </div>
     </div>
   );
