@@ -1,8 +1,10 @@
 .home-page {
     min-height: 100vh;
+    overflow: hidden;
     background-color: rgb(151, 151, 151);
     /* padding: 0 40px; */
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 

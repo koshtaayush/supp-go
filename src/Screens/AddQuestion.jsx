@@ -45,7 +45,6 @@ function AddQuestion() {
       <div className="question-container">
 
       <div className="title-section">
-        <div class>Title</div>
         <div class>Be specific and imagine you’re asking a question to another person</div>
         <input type="text" onChange={onTitleStateChange} style={{width: "100%"}}/>
       </div>
